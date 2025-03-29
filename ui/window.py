@@ -47,8 +47,11 @@ class MainWindow:
         self.text_area.configure(bg=current_theme['background'], fg=current_theme['text_color'])
 
     def change_theme(self):
-        # Пример смены темы (можно расширить для выбора темы)
-        new_theme = 'dark' if self.theme.current_theme == 'light' else 'light'
+        # Смена темы с циклом по доступным темам
+        available_themes = self.theme.list_themes()
+        current_index = available_themes.index(self.theme.current_theme)
+        new_index = (current_index + 1) % len(available_themes)
+        new_theme = available_themes[new_index]
         self.theme.set_theme(new_theme)
         self.apply_theme()
 
