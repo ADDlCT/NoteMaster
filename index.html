@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteMaster - Умный блокнот</title>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Exo 2', sans-serif;
+            scroll-behavior: smooth;
+        }
+        body {
+            background: radial-gradient(circle, #2C003E, #000000);
+            color: #EAEAEA;
+            line-height: 1.7;
+        }
+        header {
+            background: rgba(255, 0, 120, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(255, 0, 120, 0.5);
+        }
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        nav a {
+            color: #FFF;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #FFEA00;
+        }
+        main {
+            padding-top: 100px;
+        }
+        section {
+            padding: 50px;
+            margin: 40px auto;
+            max-width: 900px;
+            background: rgba(255, 0, 120, 0.2);
+            border-radius: 15px;
+        }
+        h2 {
+            font-size: 2rem;
+            color: #FFEA00;
+        }
+        .labs a {
+            display: block;
+            margin: 15px 0;
+            font-size: 1.2rem;
+            color: #FFEA00;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .labs a::after {
+            font-size: 0.9rem;
+            color: #FFF;
+        }
+        footer {
+            background: rgba(255, 0, 120, 0.8);
+            color: #FFF;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NoteMaster - Умный блокнот</h1>
+        <nav>
+            <a href="#about">О проекте</a>
+            <a href="#creator">Создатель</a>
+            <a href="#labs">Лабораторные работы</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>Описание проекта</h2>
+            <p><strong>NoteMaster</strong> — это удобный блокнот с поддержкой орфографической проверки на русском и английском языках, а также возможностью смены тем оформления.</p>
+        </section>
+
+        <section id="creator">
+            <h2>Создатель проекта</h2>
+            <p>Автор проекта: <strong>ADDlCT</strong></p>
+            <p>Контактная почта: <a href="mailto:markmelnicenko9@gmail.com" style="color: #FFEA00;">markmelnicenko9@gmail.com</a></p>
+        </section>
+
+        <section id="labs" class="labs">
+            <h2>Лабораторные работы</h2>
+            <a href="https://github.com/ADDlCT/NoteMaster/raw/main/labs/Л1/Л1%20ПППИ%20Мельниченко.docx" download>Лабораторная 1</a>
+            <a href="https://github.com/ADDlCT/NoteMaster/raw/main/labs/Л2/Л2%20ПППИ%20Мельниченко.docx" download>Лабораторная 2</a>
+            <a href="https://github.com/ADDlCT/NoteMaster/raw/main/labs/Л3/Л3%20ПППИ%20Мельниченко.docx" download>Лабораторная 3</a>
+            <a href="https://github.com/ADDlCT/NoteMaster/raw/main/labs/Л4/Л4%20ПППИ%20Мельниченко.docx" download>Лабораторная 4</a>
+            <a href="https://github.com/ADDlCT/NoteMaster/raw/main/labs/Л5/Л5%20ПППИ%20Мельниченко.docx" download>Лабораторная 5</a>
+            <a href="https://github.com/ADDlCT/NoteMaster/raw/main/labs/Л5/NoteMaster%20doc.chm" download>Документация</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 NoteMaster | Контакты: <a href="mailto:markmelnicenko9@gmail.com" style="color: #FFEA00;">markmelnicenko9@gmail.com</a></p>
+    </footer>
+</body>
+</html>
