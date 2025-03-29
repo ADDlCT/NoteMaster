@@ -3,13 +3,21 @@ from tkinter import scrolledtext, messagebox, Menu
 from .themes import Theme
 
 class MainWindow:
+    """Класс для создания главного окна приложения."""
+
     def __init__(self, title="NoteMaster"):
+        """Инициализация главного окна.
+
+        Args:
+            title (str): Заголовок окна (по умолчанию "NoteMaster").
+        """
         self.root = tk.Tk()
         self.root.title(title)
         self.theme = Theme()
         self.setup_ui()
 
     def setup_ui(self):
+        """Настраивает пользовательский интерфейс."""
         # Создание текстовой области
         self.text_area = scrolledtext.ScrolledText(self.root, wrap=tk.WORD, font=("Arial", 12))
         self.text_area.pack(expand=True, fill='both')
@@ -24,6 +32,7 @@ class MainWindow:
         self.root.protocol("WM_DELETE_WINDOW", self.on_closing)
 
     def create_menu(self):
+        """Создает меню приложения."""
         menu_bar = Menu(self.root)
 
         # Файл
@@ -42,12 +51,13 @@ class MainWindow:
         self.root.config(menu=menu_bar)
 
     def apply_theme(self):
+        """Применяет текущую тему к интерфейсу."""
         current_theme = self.theme.get_current_theme()
         self.root.configure(bg=current_theme['background'])
         self.text_area.configure(bg=current_theme['background'], fg=current_theme['text_color'])
 
     def change_theme(self):
-        # Смена темы с циклом по доступным темам
+        """Сменяет тему на следующую в списке доступных тем."""
         available_themes = self.theme.list_themes()
         current_index = available_themes.index(self.theme.current_theme)
         new_index = (current_index + 1) % len(available_themes)
@@ -56,7 +66,7 @@ class MainWindow:
         self.apply_theme()
 
     def save_note(self):
-        # Логика сохранения заметки (можно добавить диалог выбора файла)
+        """Сохраняет текущую заметку в файл."""
         filename = "note.txt"  # Замените на диалог выбора файла
         content = self.text_area.get("1.0", tk.END)
         with open(filename, 'w', encoding='utf-8') as file:
@@ -64,20 +74,5 @@ class MainWindow:
         messagebox.showinfo("Сохранение", f"Заметка сохранена в {filename}")
 
     def load_note(self):
-        # Логика загрузки заметки (можно добавить диалог выбора файла)
-        filename = "note.txt"  # Замените на диалог выбора файла
-        try:
-            with open(filename, 'r', encoding='utf-8') as file:
-                content = file.read()
-                self.text_area.delete("1.0", tk.END)
-                self.text_area.insert(tk.END, content)
-            messagebox.showinfo("Загрузка", f"Заметка загружена из {filename}")
-        except FileNotFoundError:
-            messagebox.showerror("Ошибка", f"Файл {filename} не найден.")
-
-    def on_closing(self):
-        if messagebox.askokcancel("Выход", "Вы действительно хотите выйти?"):
-            self.root.destroy()
-
-    def run(self):
-        self.root.mainloop()
+        """Загружает заметку из файла."""
+        filename = "note.txt
